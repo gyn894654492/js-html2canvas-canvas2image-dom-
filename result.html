@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>运势结果</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/result.css">
+    <style type="text/css">
+        #view{
+            width:100%;
+            height:100%;
+            background-size:100% 100%;
+            z-index: 99;
+            /*position: relative;*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            /*right: 0;
+            bottom: 0;*/
+            display: flex;
+        }
+        #thecanvas{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity:0;
+        }
+        #finalImg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 500;
+            opacity: 0;
+            display: flex;
+            width: 100%;
+        }
+        #content{
+            /*position: relative;*/
+        }
+        .content-button {
+            z-index: 501
+        }
+        .shu{
+            z-index: 101
+        }
+        .share-text{
+            z-index: 101
+        }
+        .lottory{
+            z-index: 101
+        }
+        .imgSrc{
+            position: absolute;top: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="view">
+            <img src="img/result0.png" style="width: 100%;height: 100%" class="bc">
+            <div class="user">
+                2019年 <span>&nbsp;用户名&nbsp;</span> 您的
+            </div>
+        </div>
+        <!-- <div class="imgSrc"></div> -->
+        <!--分享、保存  -->
+        <div class="share">
+            <img src="img/share3.png">
+        </div>
+        <div class="content-button"></div>
+        <!-- <div class="share-text"></div> -->
+    </div>
+    <div class="lottory"> 
+          <img src="img/start.png" style="width: 100%;z-index: 99" >
+    </div>
+
+
+    <!-- 真正的抽奖点击处 -->
+    <div class="real-lottory" style="z-index:501"></div>
+    
+
+
+
+    <div class="result-mask">
+        <img src="img/share.png" style="width: 100%">
+    </div>
+    <img src="" id="finalImg">
+</body>
+
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/base64.js"></script>
+<script src="js/canvas2image.js"></script>
+<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+<script type="text/javascript">
+
+    var height = $("#view").height() || 650;
+    var width = $("#view").width();
+    console.log(height,width)
+    var scale = 2;
+    function changeBg(callback){
+        var random = parseInt(Math.random()*5,10);
+        var sex = sessionStorage.getItem("sex");
+        $(".share img").attr("src","img/share"+ random + ".png")
+
+        console.log(random,sex)
+        if(random == 2){
+            if(sex == 1){
+                random = 5
+            }
+        }
+        $(".bc").attr("src","img/result"+ random + ".png")
+        callback()
+    }
+
+    $(".content-button").click(function(){
+        $(".result-mask").show();
+    })
+    $(".result-mask").click(function(){
+        $(".result-mask").hide();
+    })
+
+function takeScreenshot(callback) {
+    var canvas = document.createElement("canvas")
+    canvas.setAttribute('id','thecanvas');
+    canvas.width = width * 2;
+    canvas.height = height * 2;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    var context = canvas.getContext("2d");
+    context.scale(2,2);
+
+    console.log('test');
+    html2canvas(document.getElementById('view'), {
+        canvas:canvas,
+        onrendered: function(canvas) {
+            document.body.appendChild(canvas);
+            callback()
+        },
+    });
+    // console.log("a完成")
+}
+$(".real-lottory").click(function(){
+    console.log("抽奖")
+})
+$(".save").click(function(e){ 
+   setTimeout(canvastoImg(document.getElementsByTagName("canvas")[0],'finalImg'),2000)
+})
+
+function canvastoImg(canvas,id){
+  // console.log(canvas,"b开始")
+ 
+    var image = new Image();
+    image.src = canvas.toDataURL("image/png");
+    $("#" + id).attr('src',image.src)
+    $(".imgSrc").text(image.src)
+    return image;
+  
+}
+
+$(function(){
+    changeBg(function(){
+        setTimeout(takeScreenshot(function(){
+            canvastoImg(document.getElementsByTagName("canvas")[0],'finalImg')
+            
+          }),2000)
+        
+    })
+    
+
+})
+
+</script>
+</html>

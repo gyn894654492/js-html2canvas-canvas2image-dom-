@@ -1,0 +1,168 @@
+﻿*{
+	margin:0;
+	padding: 0;
+}
+body{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%;
+	/*position: relative;*/
+}
+.bc-img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.startButton{
+	position: absolute;
+	width: 80%;
+	height: 8%;
+	top: 82%;
+	left: 10%;
+	/*background: #000;
+	opacity: 0.7*/
+}
+.rule{
+	text-align: center;
+    position: absolute;
+    bottom: 3%;
+    left: 0;
+    width: 100%;
+}
+.title{
+	font-weight: bold;
+	margin:5px 0;
+}
+.content{
+	margin-bottom: 5px;
+	letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+/*问答页面*/
+.img-gif{
+    width: 80%;
+    position: absolute;
+    height: 25%;
+    top: 18%;
+    left: 9%;
+}
+
+.img-question{
+	position: absolute;
+	width: 18%;
+	top: 86%;
+	
+}
+.question0{
+	left: 8%;
+}
+.question1{
+	left: 26%;
+	display: none;
+}
+.question2{
+	left: 44%;
+	display: none;
+}
+.question3{
+	left: 62%;
+	display: none;;
+}
+.question4{
+	left: 80%;
+	display: none;
+}
+.question-content{
+    width: 85%;
+    position: absolute;
+    height: 25%;
+    top: 53%;
+    left: 7%;
+    /*background: #000;*/
+    /*opacity: 0.5;*/
+}
+.question-item{
+	display: flex;
+	align-items: center;
+	height: 33%;
+	font-size: 14px;
+}
+.unchecked{
+	width: 5%;
+	display: inline-block;
+	margin-right: 10px;
+}
+.bc{
+	background: #eee;
+	padding:5px;
+	width: 100%;
+	box-shadow: 4px -2px 5px #d2d2d2;
+}
+
+
+
+
+/*弹框*/
+.dialog{
+	display: none;
+}
+.mask{
+	position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5)
+}
+.dialog-content{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2000;
+    width: 80%;
+    overflow: auto;
+    border-radius: 10px;
+    transform: translate(-50%,-50%);
+}
+.dialog-title{
+	text-align: center;
+	line-height: 40px;
+	background: #c41f26;
+	color: #fff;
+}
+.dialog-intro{
+	height: 350px;
+	padding: 10px 15px;
+	background: #fff;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	overflow: auto;
+}
+.dialog-close{
+	z-index: 2000;
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+}
+.dialog-tip{
+	height: 50px;
+	padding: 10px 15px;
+	background: #fff;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	overflow: auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<img src="img/index.png"  class="bc-img">
+	<!-- 开始测试按钮 -->
+	<a href="infor.html" class="startButton"></a>
+	<!-- 活动说明 -->
+	<div class="rule">
+		活动说明
+	</div>
+	<div class="dialog">
+		<div class="mask"></div>
+		<div class="dialog-content">
+			<div class="dialog-title">活动说明</div>
+			<div class="dialog-intro">
+				<div class="title">一、活动时间</div>
+				<div class="content">
+					2018年12月1日-2018年12月31日
+				</div>
+				<div class="title">二、活动对象</div>
+				<div class="content" style="text-indent: 2em;">
+					江苏移动全球通、动感地带、神州行客户（无线通、随E行、移动总机、固话、商话、公话、快捷通和金卡快捷通及WAP封顶套餐用户除外
+				</div>
+				<div class="title">三、活动内容</div>
+				<div class="content" style="text-indent: 2em;">
+					用户进入活动页面，可根据活动页面引导完成运势测试。运势测试完成后，可进入抽奖页面抽取流量奖品。活动期间内，每个用户只能抽取一次流量奖品。
+				</div>
+				<div class="title">四、活动细则</div>
+				<div class="content" >
+					1.用户进入活动页面，根据活动页面引导完成运势测试；完成测试后，用户可保存结果图片，或者分享活动给好友。
+				</div>
+				<div class="content">
+					2.活动期间内，每个用户只能抽取一次流量奖品。
+				</div>
+				<div class="content">
+					3.凡参与本活动者，即视为接受活动的所有规则，且必须遵守中国移动江苏公司法律声明及其它关于营销活动的相关规定。中国移动江苏公司有权在法律允许的范围内对活动规则作出适当调整。详询10086。
+				</div>
+				<div class="content">
+					4.您通过本软件参加的商业活动与Apple Inc.无关。
+				</div>
+				<div class="title">五、FAQ</div>
+				<div class="content">1、活动什么时候开始，什么时候结束？</div>
+				<div class="content">答：2018年12月1日-2018年12月31日</div>
+				<div class="content">2、怎么参加活动？</div>
+				<div class="content">答：用户进入活动页面，可根据活动页面引导完成运势测试。运势测试完成后，可进入抽奖页面抽取流量奖品。活动期间内，每个用户只能抽取一次流量奖品。</div>
+			</div>
+			<div class="dialog-close">
+				<img src="img/close.png">
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+
+<script src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript">
+	$(".rule").click(function(){
+		$(".dialog").show();
+	})
+
+	$(".dialog-close").click(function(){
+		$(".dialog").hide();
+	})
+</script>
+</html>

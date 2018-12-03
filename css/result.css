@@ -1,0 +1,195 @@
+﻿*{
+	margin:0;
+	padding: 0;
+}
+body{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%;
+	/*position: relative;*/
+}
+.bc-img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.user{
+	width: 70%;
+	height: 6%;
+	/*background-color: #000;*/
+	/*opacity: 0.7;*/
+	position: absolute;
+	top: 50%;
+	left: 8%;
+	color: #fff;
+	display: flex;
+    align-items: center;
+    color: #a5a4b4;
+}
+.user span{
+	color: #3672f6
+}
+.lottory{
+	width: 20%;
+    /*height: 9%;*/
+/*    background-color: #000;
+    opacity: 0.7;*/
+    position: fixed;
+    top: 42%;
+    left: 80%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.content{
+	width: 57%;
+	height: 12%;
+	/*background-color: #000;*/
+	/*opacity: 0.7;*/
+	position: absolute;
+	top: 59%;
+	left: 34%;
+	color: #fff;
+}
+.content-button{
+    width: 56%;
+    height: 6%;
+    position: absolute;
+    top: 94%;
+    /* left: 10.5%; */
+    color: #fff;
+    font-size: 14px;
+/*    background: #000;
+    opacity: 0.8;*/
+}
+
+
+/*填写信息页面*/
+.nickname{
+	width: 80%;
+	height: 8%;
+	/*background-color: #000;*/
+	/*opacity: 0.7;*/
+	position: absolute;
+	top: 30%;
+	left: 10.5%;
+	color: #fff;
+}
+.infor-input{
+	width: 96%;
+    height: 40px;
+    border: 0;
+    background: #eeeeee;
+    font-size: 16px;
+    /* border-top: 2px #d2d2d2 solid; */
+    box-shadow: 4px -2px 5px #d2d2d2;
+    padding-left: 2%;
+}
+.sex{
+	width: 80%;
+	height: 8%;
+	/*background-color: #000;*/
+	/*opacity: 0.7;*/
+	position: absolute;
+	top: 65%;
+	left: 10.5%;
+	line-height: 40px;
+}
+.sex-item{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+.sex-select{
+	position: absolute;
+    width: 100%;
+    top: 2px;
+}
+.mencheck{
+	width: 45%;
+	height: 10px;
+	/*background: #9c1319;*/
+	background: #d2d2d2;
+	border-top-left-radius: 20px;
+}
+.femalecheck{
+	width: 45%;
+	height: 10px;
+	background: #d2d2d2;
+	border-top-right-radius: 20px;
+}
+.men{
+	color: #fff;
+	width: 50%;
+	height:40px;
+	/*background: #c41f26;*/
+	background: #eee;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	color: #a2a2a2;
+}
+.female{
+	width: 50%;
+	height:40px;
+	background: #eee;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	color: #a2a2a2;
+}
+.result-mask{
+	display: none;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.8);
+}
+.share-text{
+    width: 40%;
+    height: 6%;
+    position: absolute;
+    top: 94%;
+     right: 0; 
+    color: #fff;
+    font-size: 14px;
+
+/*    background: #000;
+    opacity: 0.8;*/
+}
+.shu{
+	position: absolute;
+    top: 88.6%;
+    left: 38%;
+    display: inline-block;
+    width: 1px;
+    height: 10%;
+}
+.share{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	display: flex;
+}
+.share img {
+	width: 100%;
+	height: 100%
+}
+.real-lottory{
+	width: 20%;
+    height: 15%;
+/*    background-color: #000;
+    opacity: 0.7;*/
+    position: fixed;
+    top: 45%;
+    left: 80%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>运势结果</title>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  	<link rel="stylesheet" type="text/css" href="css/result.css">
+  	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<img src="img/infor.png" class="bc-img">
+	<!-- 昵称 -->
+	<div class="nickname">
+		<input class="infor-input" type="" name="" placeholder="请输入你的昵称">
+	</div>
+	<!-- 性别 -->
+	<div class="sex">
+		<div class="sex-item">
+			<div class="mencheck"></div>
+			<div class="femalecheck"></div>
+		</div>
+		<div class="sex-item sex-select">
+			<div class="men">男</div>
+			<div class="female">女</div>
+		</div>	
+	</div>
+
+
+	<div class="dialog">
+		<div class="mask"></div>
+		<div class="dialog-content">
+			<div class="dialog-title">提示</div>
+			<div class="dialog-tip">请输入昵称</div>
+			<div class="dialog-close">
+				<img src="img/close.png">
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript">
+
+	var sex; //1 男 2女
+	var nickname;
+	$(function(){
+ 		sex=1;
+	})
+
+
+	$(".men").click(function(){
+		$(".men").css("background","#c41f26").css("color","#fff");
+		$(".female").css("background","#eee").css("color","#a2a2a2");
+		$(".mencheck").css("background","#9c1319");
+		$(".femalecheck").css("background","#d2d2d2");
+		sex =1;
+		sessionStorage.setItem("sex", sex);
+		if($(".infor-input").val()){
+			window.location.href = "question.html";
+		}else{
+			$(".dialog").show();
+		}
+		
+	})
+
+	$(".female").click(function(){
+		$(".female").css("background","#c41f26").css("color","#fff");
+		$(".men").css("background","#eee").css("color","#a2a2a2");
+		$(".femalecheck").css("background","#9c1319");
+		$(".mencheck").css("background","#d2d2d2");
+		sex=2;
+		sessionStorage.setItem("sex", sex);
+		if($(".infor-input").val()){
+			window.location.href = "question.html";
+		}else{
+			$(".dialog").show();
+		}
+	})
+
+	$(".dialog-close").click(function(){
+		$(".dialog").hide();
+	})
+</script>
+</html>

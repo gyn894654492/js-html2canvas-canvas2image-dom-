@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>运势问答</title>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  	<link rel="stylesheet" type="text/css" href="css/index.css">
+  	
+</head>
+<body>
+	<img src="img/question.png" class="bc-img">
+	<img src="" class="img-gif">
+
+	<div class="question-content">
+		<div class="question-item">
+			<img src="img/unchecked.png" class="unchecked">
+			<div class="answer1 bc">	
+			</div>
+		</div>
+		<div class="question-item">
+			<img src="img/unchecked.png" class="unchecked">
+			<div class="answer2 bc" >	
+			</div>
+		</div>
+		<div class="question-item">
+			<img src="img/unchecked.png" class="unchecked">
+			<div class="answer3 bc" >	
+			</div>
+		</div>
+	</div>
+
+	<img src="img/question1.png" class="img-question question0">
+	<img src="img/question2.png" class="img-question question1">
+	<img src="img/question3.png" class="img-question question2">
+	<img src="img/question4.png" class="img-question question3">
+	<img src="img/question5.png" class="img-question question4">
+
+</body>
+<script type="text/javascript" src="js/question.js"></script>
+<script src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript">
+
+	var index ;
+	$(function(){
+		index = 0;
+		console.log(questions)
+		$(".img-gif").attr("src",questions[index].img);
+		$(".answer1").html(questions[index].anwser1);
+		$(".answer2").html(questions[index].anwser2);
+		$(".answer3").html(questions[index].anwser3);
+	})
+
+	$(".question-item").click(function(){
+		$(".question-item .unchecked").attr("src","img/unchecked.png");
+		$(".question-item .bc").css("background","#eee");
+		$(this).children().eq(0).attr("src","img/checked.png");
+		$(this).children().eq(1).css("background","#ffe484");
+		console.log(index)
+
+
+		setTimeout("nextQuestion()",500)
+		
+	})
+
+
+	function nextQuestion(){
+		$(".img-question").hide();
+		$(".question"+(index+1)).show();
+
+		console.log(index)
+		if(index<4){
+			var question = questions[++index];
+			$(".img-gif").attr("src",question.img);
+			$(".answer1").html(question.anwser1);
+			$(".answer2").html(question.anwser2);
+			$(".answer3").html(question.anwser3);
+			$(".question-item .unchecked").attr("src","img/unchecked.png")
+			$(".question-item .bc").css("background","#eee");
+		}else{
+			window.location.href= "result.html"
+		}
+	}
+</script>
+
+</html>
